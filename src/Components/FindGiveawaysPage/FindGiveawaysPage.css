@@ -1,6 +1,44 @@
 .giveaways_title {
   text-align: center;
   font-family: Montserrat;
-  color: white;
+  color: #112B3C;
+}
+
+.giveaways_select_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  gap: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 932px) {
+  .giveaways_select_block {
+    margin: 0 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .giveaways_select_block .giveaways_select {
+    font-size: 12px;
+  }
+}
+
+.giveaways_select_block .giveaways_select {
+  font-family: Montserrat;
+}
+
+.giveaway_product_title {
+  font-family: Montserrat;
+  text-align: center;
 }
 /*# sourceMappingURL=FindGiveawaysPage.css.map */

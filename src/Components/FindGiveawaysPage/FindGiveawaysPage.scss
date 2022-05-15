@@ -1,5 +1,37 @@
+$giveawaysBlockWidth: 900px;
+$giveawaysBlockMargin: 16px;
+
 .giveaways_title {
   text-align: center;
   font-family: Montserrat;
-  color: white;
+  color: #112B3C;
+}
+
+.giveaways_select_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  gap: 16px;
+
+  max-width: $giveawaysBlockWidth;
+  margin: 0 auto;
+
+  @media screen and (max-width: ($giveawaysBlockWidth + 2 * $giveawaysBlockMargin)) {
+    margin: 0 $giveawaysBlockMargin;
+    flex-direction: column;
+
+    .giveaways_select {
+      font-size: 12px;
+    }
+  }
+
+  .giveaways_select {
+    font-family: Montserrat;
+  }
+}
+
+.giveaway_product_title {
+  font-family: Montserrat;
+  text-align: center;
 }
