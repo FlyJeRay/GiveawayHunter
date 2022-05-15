@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,UAAU;EACvB,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "FindGiveawaysPage.scss"
+    ],
+    "names": [],
+    "file": "FindGiveawaysPage.css"
+}

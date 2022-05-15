@@ -1,0 +1,77 @@
+.header_background {
+  background-color: #112B3C;
+  width: 100%;
+}
+
+.header_background .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header_background .header .header_title {
+  font-family: Montserrat;
+  font-size: 26px;
+  color: #EFEFEF;
+}
+
+@media screen and (max-width: 932px) {
+  .header_background .header {
+    margin: 0 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header_background .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .header_background .header .header_title {
+    text-align: center;
+  }
+  .header_background .header .header_link_block {
+    margin: 0 auto 16px auto;
+  }
+}
+
+.header_background .header .header_link_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header_background .header .header_link_block .header_link, .header_background .header .header_link_block .header_active_link {
+  font-family: Montserrat;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.header_background .header .header_link_block .header_active_link {
+  color: #F66B0E;
+  font-size: 18px;
+}
+
+.header_background .header .header_link_block .header_link {
+  color: #EFEFEF;
+  font-size: 16px;
+}
+/*# sourceMappingURL=PageHeader.css.map */
