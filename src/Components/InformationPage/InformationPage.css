@@ -1,6 +1,19 @@
+.info_title, .info_text {
+  margin: 16px;
+}
+
 .info_title {
   text-align: center;
   font-family: Montserrat;
-  color: red;
+  color: #112B3C;
+}
+
+.info_text {
+  text-align: center;
+  font-family: Montserrat;
+}
+
+.info_text a {
+  color: #F66B0E;
 }
 /*# sourceMappingURL=InformationPage.css.map */
