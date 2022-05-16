@@ -1,6 +1,8 @@
 $giveawaysBlockWidth: 900px;
 $giveawaysBlockMargin: 16px;
 
+$phoneWidth: 500px;
+
 .giveaways_title {
   text-align: center;
   font-family: Montserrat;
@@ -10,28 +12,114 @@ $giveawaysBlockMargin: 16px;
 .giveaways_select_block {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   gap: 16px;
 
   max-width: $giveawaysBlockWidth;
   margin: 0 auto;
 
+  .giveaways_select {
+    font-family: Montserrat;
+    width: 250px;
+  }
+
+  .giveaways_select_dvp {
+    font-family: Montserrat;
+    width: 350px;
+  }
+
   @media screen and (max-width: ($giveawaysBlockWidth + 2 * $giveawaysBlockMargin)) {
     margin: 0 $giveawaysBlockMargin;
     flex-direction: column;
 
-    .giveaways_select {
+    .giveaways_select, .giveaways_select_dvp {
       font-size: 12px;
+      width: 100%;
     }
-  }
-
-  .giveaways_select {
-    font-family: Montserrat;
   }
 }
 
-.giveaway_product_title {
+.giveaways_nosales_title {
   font-family: Montserrat;
   text-align: center;
+
+  margin: $giveawaysBlockMargin;
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
+
+.giveaways_list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  max-width: $giveawaysBlockWidth;
+  margin: 16px auto;
+
+  @media screen and (max-width: ($giveawaysBlockWidth + 2 * $giveawaysBlockMargin)) {
+    margin: 16px $giveawaysBlockMargin;
+  }
+}
+
+.giveaway_block {
+  display: block;
+
+  width: 100%;
+  
+  justify-content: space-between;
+
+  height: 40px;
+
+  background-color: #112B3C;
+  border-radius: 5px;
+  border: none;
+
+  transition: all 0.15s;
+
+  .giveaway_description, .giveaway_instruction {
+    visibility: hidden;
+
+    font-family: Montserrat;
+    color: white;
+  }
+
+  .giveaway_description {
+    font-style: italic;
+  }
+
+  .giveaway_instruction {
+    a {
+      color: #F66B0E;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus-within {
+    background-color: #205375;
+    height: auto;
+
+    .giveaway_description, .giveaway_instruction {
+      visibility: visible;
+    }
+  }
+
+  h3 {
+    font-family: Montserrat;
+    color: white;
+    margin: 11px;
+    vertical-align: text-top;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    h3 {
+      font-size: 12px;
+    }
+  }
 }

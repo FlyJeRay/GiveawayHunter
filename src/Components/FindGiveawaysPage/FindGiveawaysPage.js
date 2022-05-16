@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
+import Parser from "html-react-parser";
 
 import "./FindGiveawaysPage.css"
 import api_data from "../../api-data"
@@ -15,12 +16,13 @@ function FindGiveawaysPage() {
     description: '',
     end_date: '',
     image: '',
-    instructions: '',
+    instructions: ``,
     open_giveaway_url: '',
     platforms: '',
     status: '',
     type: '',
-    title: ''
+    title: '',
+    id: '1'
   }]);
 
   useEffect(() => {
@@ -74,7 +76,6 @@ function FindGiveawaysPage() {
     const data = await fetch(fetchURL, fetchOptions);
     const json = await data.json();
     setGiveaways(json);
-    console.log(json);
   }
 
   const changePlatformSort = (event) => {
@@ -101,16 +102,51 @@ function FindGiveawaysPage() {
     })
   }
 
+  const addZeroToNumber = (n) => {
+    return n > 9 ? n : "0" + n;
+  }
+
+  const cleanTimezoneOffset = (n) => {
+    return n / 60 + ':' + addZeroToNumber(n % 60);
+  } 
+
+  const cleanDate = (d) => {
+    const date = new Date(d);
+
+    const dateToString = `${date.getDate()}.${addZeroToNumber(date.getMonth() + 1)}.${date.getFullYear()}`;
+    const timeToString = `${date.getHours()}:${addZeroToNumber(date.getMinutes())}:${addZeroToNumber(date.getSeconds())}`;
+    const timezoneToString = `(${cleanTimezoneOffset(date.getTimezoneOffset())} UTC)`
+
+    const str = `${dateToString} ${timeToString} ${timezoneToString}`;
+
+    return str;
+  }
+
+  const returnGiveawayDate = (date) => {
+    if (isNaN(new Date(date))) {
+      return 'not mentioned';
+    }
+    else {
+      return cleanDate(new Date(date));
+    }
+  }
+
   function SalesBlock() {
     if (giveaways.length > 0) {
-      return <div>{
+      return <div className="giveaways_list">{
         giveaways.map((giveaway) => {
-          return (<h3 className="giveaway_product_title" key={giveaway.title}>{giveaway.title}</h3>)
+          return (
+          <button className="giveaway_block" key={giveaway.title}>
+            <h3>{giveaway.title}</h3>
+            <p className="giveaway_description">{giveaway.description}</p>
+            <p id={giveaway.id} className="giveaway_instruction">{Parser(giveaway.instructions)}</p>
+            <p className="giveaway_description">End Date: { returnGiveawayDate(giveaway.end_date) }</p>
+          </button>)
         })
       }</div>
     }
     else {
-      return <h2>Sorry, but there are no giveaways</h2>
+      return <h2 className="giveaways_nosales_title">Sorry, but there are no giveaways of that type</h2>
     }
   }
 
@@ -129,7 +165,7 @@ function FindGiveawaysPage() {
                 options={selectOptions_type} />
 
         <Select onChange={changeDVPSort}
-                className="giveaways_select"
+                className="giveaways_select_dvp"
                 placeholder={<div>Sort by Date, Value or Popularity</div>}
                 options={selectOptions_dvp} />
       </div>

@@ -12,12 +12,22 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 16px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.giveaways_select_block .giveaways_select {
+  font-family: Montserrat;
+  width: 250px;
+}
+
+.giveaways_select_block .giveaways_select_dvp {
+  font-family: Montserrat;
+  width: 350px;
 }
 
 @media screen and (max-width: 932px) {
@@ -28,17 +38,94 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .giveaways_select_block .giveaways_select {
+  .giveaways_select_block .giveaways_select, .giveaways_select_block .giveaways_select_dvp {
     font-size: 12px;
+    width: 100%;
   }
 }
 
-.giveaways_select_block .giveaways_select {
-  font-family: Montserrat;
-}
-
-.giveaway_product_title {
+.giveaways_nosales_title {
   font-family: Montserrat;
   text-align: center;
+  margin: 16px;
+}
+
+@media screen and (max-width: 500px) {
+  .giveaways_nosales_title {
+    font-size: 14px;
+  }
+}
+
+.giveaways_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  max-width: 900px;
+  margin: 16px auto;
+}
+
+@media screen and (max-width: 932px) {
+  .giveaways_list {
+    margin: 16px 16px;
+  }
+}
+
+.giveaway_block {
+  display: block;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 40px;
+  background-color: #112B3C;
+  border-radius: 5px;
+  border: none;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+.giveaway_block .giveaway_description, .giveaway_block .giveaway_instruction {
+  visibility: hidden;
+  font-family: Montserrat;
+  color: white;
+}
+
+.giveaway_block .giveaway_description {
+  font-style: italic;
+}
+
+.giveaway_block .giveaway_instruction a {
+  color: #F66B0E;
+}
+
+.giveaway_block:hover {
+  cursor: pointer;
+}
+
+.giveaway_block:focus-within {
+  background-color: #205375;
+  height: auto;
+}
+
+.giveaway_block:focus-within .giveaway_description, .giveaway_block:focus-within .giveaway_instruction {
+  visibility: visible;
+}
+
+.giveaway_block h3 {
+  font-family: Montserrat;
+  color: white;
+  margin: 11px;
+  vertical-align: text-top;
+}
+
+@media screen and (max-width: 500px) {
+  .giveaway_block h3 {
+    font-size: 12px;
+  }
 }
 /*# sourceMappingURL=FindGiveawaysPage.css.map */
