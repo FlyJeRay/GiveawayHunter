@@ -12,8 +12,8 @@ function App() {
       <div className="App">
         <PageHeader/>
         <Routes>
-          <Route path="/" element={<FindGiveawaysPage/>} />
-          <Route path="/info" element={<InformationPage/>} />
+          <Route path="/GiveawayHunter/" element={<FindGiveawaysPage/>} />
+          <Route path="/GiveawayHunter/info" element={<InformationPage/>} />
         </Routes>
       </div>
     </Router>
