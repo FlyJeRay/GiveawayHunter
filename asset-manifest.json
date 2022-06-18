@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/GiveawayHunter/static/css/main.b655fa71.css",
+    "main.js": "/GiveawayHunter/static/js/main.65d19c61.js",
+    "index.html": "/GiveawayHunter/index.html",
+    "main.b655fa71.css.map": "/GiveawayHunter/static/css/main.b655fa71.css.map",
+    "main.65d19c61.js.map": "/GiveawayHunter/static/js/main.65d19c61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b655fa71.css",
+    "static/js/main.65d19c61.js"
+  ]
+}
